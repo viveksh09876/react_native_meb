@@ -3,16 +3,17 @@ import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 import Icon from 'react-native-vector-icons/FontAwesome5';
-import { FloatingAction } from "react-native-floating-action";
 import HomeScreen from './src/screens/HomeScreen';
 import TransactionsScreen from './src/screens/TransactionsScreen';
 import ReportsScreen from './src/screens/ReportsScreen';
 import SettingsScreen from './src/screens/SettingsScreen';
+import NewEntryScreen from './src/screens/NewEntryScreen';
 
 
 const HomeTab = createStackNavigator(
   {
-    Home: HomeScreen
+    Home: HomeScreen,
+    NewEntry: NewEntryScreen
   },
   {
     defaultNavigationOptions: {
@@ -76,7 +77,7 @@ const MainApp = createBottomTabNavigator(
     Home: HomeTab,
     Transactions: TransactionsTab,
     Reports: ReportsTab,
-    Settings: SettingsTab,
+    Settings: SettingsTab
   },
   {
     defaultNavigationOptions: ({ navigation }) => ({
